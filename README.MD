@@ -2,27 +2,28 @@
 
 **Описание тестов в папке tests**
 Позитивные тесты:
-|#| Тест-кейс| Описание |
+|#| Тест-кейс (имя метода) | Описание |
 | --- | --- | --- |
-|[1](https://github.com/fox67rus/petFriendsTesting/blob/cccc1b7428e5b5529f314afef52a65899803b295/tests/test_pet_friends.py#L8)|test_get_api_key_for_valid_user| Получение api ключа для зарегистрированного пользователя| 
-|2|test_get_all_pets_with_valid_key| Получение списка питомцев с валидным api ключом|
-|3|test_add_new_pet_with_valid_data| Добавление нового питомца с корректными данными|
-|4|test_successful_update_self_pet_info| Успешное обновление данных своего питомца|
-|5|test_successful_delete_self_pet| Успешное удаление питомца|
-|6|test_add_new_pet_without_photo_valid_data| Простое добавление питомца (без фото) с валидными данными|
-|7|test_successful_add_pets_jpg_photo| Успешное добавление фото питомца с корректным файлом изображения (.jpg)|
-|8|test_successful_add_pets_png_photo| Успешное добавление фото питомца с корректным файлом изображения (.png)|
+|[p1](https://github.com/fox67rus/petFriendsTesting/blob/cccc1b7428e5b5529f314afef52a65899803b295/tests/test_pet_friends.py#L8)|test_get_api_key_for_valid_user| Получение api ключа для зарегистрированного пользователя| 
+|p2|test_get_all_pets_with_valid_key| Получение списка всех питомцев с валидным api ключом|
+|p3|test_add_new_pet_with_valid_data| Добавление нового питомца с корректными данными|
+|p4|test_successful_update_self_pet_info| Успешное обновление данных своего питомца|
+|p5|test_successful_delete_self_pet| Успешное удаление питомца|
+|p6|test_add_new_pet_without_photo_valid_data| Простое добавление питомца (без фото) с валидными данными|
+|p7|test_successful_add_pets_jpg_photo| Успешное добавление фото питомца с корректным файлом изображения (.jpg)|
 
 Негативные тесты:
 |#| Тест-кейс| Описание |
 | --- | --- | --- |
-|1|test_get_api_key_for_invalid_user| Получение api ключа для не зарегистрированного пользователя|
-|2|test_get_all_pets_with_invalid_key| Запрос списка питомцев с невалидным api ключом возвращает код 403|
-|3|| Добавление нового питомца с отрицательным возрастом|
-|4|| Отказ при обновлении данных чужого питомца|
-|5|| Отказ при удалении чужого питомца|
-|6|| Простое добавление питомца (без фото) с пустым именем|
-|7|| Возврат кода 400 при запросе на добавление фото с неподдерживаемым форматом файла (.gif)|
+|n1|test_get_api_key_for_invalid_user| Получение api ключа для не зарегистрированного пользователя|
+|n2|test_get_all_pets_with_invalid_key| Запрос списка питомцев с невалидным api ключом возвращает код 403|
+|n3|test_unsuccessful_update_another_user_pet_info| Отказ при обновлении данных чужого питомца|
+|n4|test_unsuccessful_update_self_pet_info_with_empty_type| Обновление данных питомца: новая порода пустая строка|
+|n5|test_unsuccessful_delete_another_user_pet| Отказ при удалении чужого питомца|
+|n6|test_add_new_pet_without_photo_empty_name| Простое добавление питомца (без фото) с пустым именем|
+|n7|test_add_new_pet_without_photo_long_animal_type| Простое добавление питомца (без фото): порода - текст 256 символов|
+|n8|test_add_new_pet_without_photo_negative_age| Простое добавление питомца (без фото): отрицательный возраст|
+
 
 В директории /tests располагается файл с тестами.
 
