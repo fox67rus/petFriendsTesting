@@ -133,6 +133,15 @@ def test_successful_add_pets_correct_photo(pet_photo='images/mini-dog.png'):
         raise Exception('Список питомцев пуст')
 
 
+# Негативные тесты
+def test_get_api_key_for_invalid_user(email='free-user@mymail.com', password='pass'):
+    """
+    Проверяем что запрос api ключа для незарегистрированного пользователя возвращает статус 403
+    """
+    status, _ = pf.get_api_key(email, password)
+    assert status == 403
+
+
 def test_get_all_pets_with_invalid_key(filter=''):
     """ Проверяем что запрос всех питомцев с некорректным api ключом возвращает код 403
     """
@@ -141,14 +150,6 @@ def test_get_all_pets_with_invalid_key(filter=''):
     }
     status, result = pf.get_list_of_pets(auth_key, filter)
 
-    assert status == 403
-
-
-def test_get_api_key_for_invalid_user(email='free-user@mymail.com', password='pass'):
-    """
-    Проверяем что запрос api ключа для незарегистрированного пользователя возвращает статус 403
-    """
-    status, _ = pf.get_api_key(email, password)
     assert status == 403
 
 
