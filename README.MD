@@ -2,15 +2,15 @@
 
 **Описание тестов в папке tests**
 Позитивные тесты:
-|#| Тест-кейс (имя метода) | Описание |
-| --- | --- | --- |
-|[p1](https://github.com/fox67rus/petFriendsTesting/blob/cccc1b7428e5b5529f314afef52a65899803b295/tests/test_pet_friends.py#L8)|test_get_api_key_for_valid_user| Получение api ключа для зарегистрированного пользователя| 
-|p2|test_get_all_pets_with_valid_key| Получение списка всех питомцев с валидным api ключом|
-|p3|test_add_new_pet_with_valid_data| Добавление нового питомца с корректными данными|
-|p4|test_successful_update_self_pet_info| Успешное обновление данных своего питомца|
-|p5|test_successful_delete_self_pet| Успешное удаление питомца|
-|p6|test_add_new_pet_without_photo_valid_data| Простое добавление питомца (без фото) с валидными данными|
-|p7|test_successful_add_pets_jpg_photo| Успешное добавление фото питомца с корректным файлом изображения (.jpg)|
+|#| Тест-кейс (имя метода) | Описание | Ссылка на метод|
+| --- | --- | --- | --- |
+|p1|test_get_api_key_for_valid_user| Получение api ключа для зарегистрированного пользователя| [link](https://github.com/fox67rus/petFriendsTesting/blob/cccc1b7428e5b5529f314afef52a65899803b295/tests/test_pet_friends.py#L8)|
+|p2|test_get_all_pets_with_valid_key| Получение списка всех питомцев с валидным api ключом| [link](https://github.com/fox67rus/petFriendsTesting/blob/a43096b9de5b54e57fec0603be3242d5535adcf9/tests/test_pet_friends.py#L21)
+|p3|test_add_new_pet_with_valid_data| Добавление нового питомца с корректными данными| [link](https://github.com/fox67rus/petFriendsTesting/blob/a43096b9de5b54e57fec0603be3242d5535adcf9/tests/test_pet_friends.py#L34)
+|p4|test_successful_update_self_pet_info| Успешное обновление данных своего питомца| [link](https://github.com/fox67rus/petFriendsTesting/blob/a43096b9de5b54e57fec0603be3242d5535adcf9/tests/test_pet_friends.py#L53)
+|p5|test_successful_delete_self_pet| Успешное удаление питомца| [link](https://github.com/fox67rus/petFriendsTesting/blob/a43096b9de5b54e57fec0603be3242d5535adcf9/tests/test_pet_friends.py#L72)
+|p6|test_add_new_pet_without_photo_valid_data| Простое добавление питомца (без фото) с валидными данными| [link](https://github.com/fox67rus/petFriendsTesting/blob/776fbfea4e97df786945baa78dd31dff990aadff/tests/test_pet_friends.py#L97)
+|p7|test_successful_add_pets_correct_photo| Успешное добавление фото питомца с корректным файлом изображения (.jpg)| [link](https://github.com/fox67rus/petFriendsTesting/blob/776fbfea4e97df786945baa78dd31dff990aadff/tests/test_pet_friends.py#L113)
 
 Негативные тесты:
 |#| Тест-кейс| Описание |
