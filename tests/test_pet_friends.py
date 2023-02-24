@@ -94,17 +94,6 @@ def test_successful_delete_self_pet():
 
 
 # 10 дополнительных тестов
-def test_get_all_pets_with_invalid_key(filter=''):
-    """ Проверяем что запрос всех питомцев с некорректным api ключом возвращает код 403
-    """
-    auth_key = {
-        'key': 'very-invalid-api-key'
-    }
-    status, result = pf.get_list_of_pets(auth_key, filter)
-
-    assert status == 403
-
-
 def test_add_new_pet_without_photo_valid_data(name='Снежок', animal_type='хаски', age='0'):
     """
     Проверяем простой метод добавления питомца с корректными данными
@@ -142,6 +131,17 @@ def test_successful_add_pets_correct_photo(pet_photo='images/mini-dog.png'):
     else:
         # если список питомцев пустой, то выкидываем исключение с текстом об отсутствии своих питомцев
         raise Exception('Список питомцев пуст')
+
+
+def test_get_all_pets_with_invalid_key(filter=''):
+    """ Проверяем что запрос всех питомцев с некорректным api ключом возвращает код 403
+    """
+    auth_key = {
+        'key': 'very-invalid-api-key'
+    }
+    status, result = pf.get_list_of_pets(auth_key, filter)
+
+    assert status == 403
 
 
 def test_get_api_key_for_invalid_user(email='free-user@mymail.com', password='pass'):
