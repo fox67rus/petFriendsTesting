@@ -17,11 +17,11 @@
 **Описание тестов в папке tests**
 |#| name| description |
 | --- | --- | --- |
-|1|test_get_api_key_for_valid_user| | 
-|2|test_get_all_pets_with_valid_key| |
-|3|test_add_new_pet_with_valid_data| |
-|4|test_successful_update_self_pet_info| |
-|5|test_successful_delete_self_pet| |
-|6|test_add_new_pet_without_photo_valid_data| |
-|7|test_successful_add_pets_photo| |
-|8|test_get_api_key_for_invalid_user| | 
+|1|test_get_api_key_for_valid_user| Получение api ключа для зарегистрированного пользователя| 
+|2|test_get_all_pets_with_valid_key| Получение списка питомцев с валидным api ключом|
+|3|test_add_new_pet_with_valid_data| Добавление нового питомца с корректными данными|
+|4|test_successful_update_self_pet_info| Успешное обновление данных питомца|
+|5|test_successful_delete_self_pet| Успешное удаление питомца|
+|6|test_add_new_pet_without_photo_valid_data| Добавление питомца без фото|
+|7|test_successful_add_pets_photo| Успешное добавление фото питомца|
+|8|test_get_api_key_for_invalid_user| Получение api ключа для не  существующего пользователя| 
