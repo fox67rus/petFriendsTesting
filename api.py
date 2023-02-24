@@ -115,3 +115,58 @@ class PetFriends:
             result = res.text
 
         return status, result
+
+    def add_new_pet_without_photo(self, auth_key: json, name: str, animal_type: str, age: str) -> json:
+        """
+        Метод позволяет добавить информацию о новом питомце и возвращает статус
+        запроса на сервер и результат в формате JSON с данными добавленного питомца
+        """
+
+        data = MultipartEncoder(
+            fields={
+                'name': name,
+                'animal_type': animal_type,
+                'age': age,
+            })
+
+        headers = {'auth_key': auth_key['key'], 'Content-Type': data.content_type}
+
+        res = requests.post(self.base_url + '/api/create_pet_simple', headers=headers, data=data)
+        status = res.status_code
+
+        try:
+            result = res.json()
+        except json.decoder.JSONDecodeError:
+            result = res.text
+
+        return status, result
+
+    def add_pets_photo(self, auth_key: json, pet_photo: str, pet_id: str) -> json:
+        """
+        Метод добавляет фото дл питомца по его id и возвращает статус
+        запроса на сервер и результат в формате JSON с данными указанного питомца
+        """
+
+        data = MultipartEncoder(
+            fields={
+                'pet_photo': (pet_photo, open(pet_photo, 'rb'), 'image/jpeg')
+            })
+
+        headers = {'auth_key': auth_key['key'], 'Content-Type': data.content_type}
+
+        res = requests.post(self.base_url + '/api/pets/set_photo/' + pet_id, headers=headers, data=data)
+        status = res.status_code
+
+        try:
+            result = res.json()
+        except json.decoder.JSONDecodeError:
+            result = res.text
+
+        return status, result
+
+
+
+
+
+
+
