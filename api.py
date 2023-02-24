@@ -143,13 +143,22 @@ class PetFriends:
 
     def add_pets_photo(self, auth_key: json, pet_photo: str, pet_id: str) -> json:
         """
-        Метод добавляет фото дл питомца по его id и возвращает статус
+        Метод добавляет фото для питомца по его id и возвращает статус
         запроса на сервер и результат в формате JSON с данными указанного питомца
         """
 
+        # определяем формат файла
+        ext = pet_photo[pet_photo.rfind(".") + 1:]
+        if ext == 'jpg' or ext == 'jpeg':
+            image_type = 'image/jpeg'
+        elif ext == 'png':
+            image_type = 'image/png'
+        else:
+            raise Exception('Неподдерживаемый формат файла')
+
         data = MultipartEncoder(
             fields={
-                'pet_photo': (pet_photo, open(pet_photo, 'rb'), 'image/jpeg')
+                'pet_photo': (pet_photo, open(pet_photo, 'rb'), image_type)
             })
 
         headers = {'auth_key': auth_key['key'], 'Content-Type': data.content_type}
@@ -163,10 +172,3 @@ class PetFriends:
             result = res.text
 
         return status, result
-
-
-
-
-
-
-
